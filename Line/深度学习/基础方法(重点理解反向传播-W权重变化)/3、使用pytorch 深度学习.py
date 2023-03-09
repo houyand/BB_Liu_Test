@@ -21,7 +21,7 @@ w_list = []
 loss_list = []
 
 if __name__ == '__main__':
-    w = torch.Tensor([1.0])  # Pytorch 基本数据成员 Tensor 用来存数据，可以是标量，向量，矩阵，里面包含data w的值,grad：loss对w求导
+    w = torch.Tensor([1.0])  # Pytorch 基本数据成员 Tensor 用来存数据，可以是标量，向量，矩阵，里面包含data ，是w的数值,grad：loss对w求梯度下降后的结果
     w.requires_grad = True  # 设置需要计算梯度
 
     x_data = [1.0, 2.0, 3.0]
@@ -32,7 +32,7 @@ if __name__ == '__main__':
         w_list.append(epoch)
         for x, y in zip(x_data, y_data):
             loss_data = loss(x, y)
-            loss_data.backward()    #会自动计算所有链路上的梯度，计算的最后结果存在 w
+            loss_data.backward()    #会自动计算所有链路上的梯度，计算的最后结果保存在 w.grad 这里。
             print('\tgrad:', x, y, w.grad.item())   #.item() 是取的数值
             w.data = w.data - 0.01 * w.grad.data   #注意grad 也是tensor ,需要取grad的数值data参与运算，结果还是tensor
 

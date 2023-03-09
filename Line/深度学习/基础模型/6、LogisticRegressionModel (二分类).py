@@ -42,7 +42,7 @@ if __name__ == '__main__':
     # x = np.linspace(0, 10, 200)
     # x_t = torch.Tensor(x).view((200, 1))  # 列表变为torch中tensor。200列，1行
     # y_t = model(x_t)
-    # y = y_t.data.numpy()
+    # y = y_t.datasources.numpy()
     # plt.plot(x, y)
     # plt.plot([0, 10], [0.5, 0.5], c='r')
     # plt.xlabel('Hours')

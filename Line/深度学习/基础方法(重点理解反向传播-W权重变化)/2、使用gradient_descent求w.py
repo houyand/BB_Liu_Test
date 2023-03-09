@@ -36,6 +36,7 @@ if __name__ == '__main__':
 
     print('Predict (before training)', 4, forward(4))
     for epoch in range(100):
+        # 平均损失
         cost_val = cost(x_data, y_data)
         w_list.append(epoch)   #打印行数据
         mse_list.append(cost_val) #打印列数据

@@ -14,7 +14,7 @@ class Net(torch.nn.Module):
         self.fc = torch.nn.Linear(320, 10)
 
     def forward(self, x):
-    # Flatten data from (n, 1, 28, 28) to (n, 784)
+    # Flatten datasources from (n, 1, 28, 28) to (n, 784)
         batch_size = x.size(0)
         x = F.relu(self.pooling(self.conv1(x)))
         x = F.relu(self.pooling(self.conv2(x)))
@@ -62,7 +62,7 @@ if __name__ == '__main__':
 #     # conv_layer = torch.nn.Conv2d(1, 1, kernel_size=3, padding=1, stride=2,bias=False)
 #     # 自定义卷积核的初始化值
 #     kernel = torch.Tensor([1, 2, 3, 4, 5, 6, 7, 8, 9]).view(1, 1, 3, 3)
-#     conv_layer.weight.data = kernel.data
+#     conv_layer.weight.datasources = kernel.datasources
 #
 #     output = conv_layer(input)
 #     print(output)

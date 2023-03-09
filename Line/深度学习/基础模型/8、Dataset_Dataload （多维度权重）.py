@@ -5,7 +5,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 
 
-# Dataset实现类，加载数据，实现抽象类Dataset
+# Dataset继承类，加载数据，实现抽象类Dataset
 class DiabetesDataset(Dataset):
     def __init__(self, filepath):
         xy = np.loadtxt(filepath, delimiter=',', dtype=np.float32)
@@ -49,7 +49,7 @@ if __name__ == '__main__':
         # enumerate() 函数将traim_loader 数据下标组合起来类似这[(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
         #0应该表示的是从下标从 0 计算
         for i, data in enumerate(train_loader, 0):
-            # 1. Prepare data
+            # 1. Prepare datasources
             inputs, labels = data
             # 2. Forward
             y_pred = model(inputs)

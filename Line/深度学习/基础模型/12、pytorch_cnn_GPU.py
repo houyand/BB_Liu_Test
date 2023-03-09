@@ -24,7 +24,7 @@ class Net(torch.nn.Module):
         self.fc = torch.nn.Linear(320, 10)
 
     def forward(self, x):
-        # flatten data from (n,1,28,28) to (n, 784)
+        # flatten datasources from (n,1,28,28) to (n, 784)
 
         batch_size = x.size(0)
         x = F.relu(self.pooling(self.conv1(x)))
